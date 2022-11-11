@@ -4,8 +4,10 @@ import ArrowImg from '../docs/chevron-small.svg'
 import Slider from "react-slick";
 import data from './cars.json'
 import '../style.css';
+import CarLearn from './CarLearn';
 export default function CarCardUI() {
     const [searchTerm, setSearchTerm] = useState("");
+    const [id, setId] = useState();
     var settings = {
         dots: true,
         infinite: true,
@@ -86,7 +88,7 @@ export default function CarCardUI() {
                                                         </Link>
                                                     </div>
                                                     <div className="card-Shop">
-                                                        <Link className='link' to="/learn">
+                                                        <a className='link' href={val.url}>
                                                             <div className='inner-container'>
                                                                 <div >
                                                                     <p className='para'>Shop</p>
@@ -95,7 +97,7 @@ export default function CarCardUI() {
                                                                     <img className='arrowImg' src={ArrowImg} alt='img' />
                                                                 </div>
                                                             </div>
-                                                        </Link>
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </div>

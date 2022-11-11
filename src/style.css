@@ -13,32 +13,6 @@
     padding: 10px;
     outline: none;
 }
-/* .template_Container{
-    background-color: white;
-    width: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-}
-.templateContainer .template_Container .template{
-    border: 5px solid rgba(118, 114, 131, 0.078);
-    height: 70vh;
-    width:50vw;
-    background-color: white;
-    margin: 15px;
-    padding: 0px 20px;
-}
-.templateContainer .template_Container .template img{
-    height: 250px;
-}
-
-.image{
-    width: 18rem;
-}
-p{
-    margin-top: 2rem;
-} */
 .card-item {
     background: rgba(91, 81, 81, 0.04);
     cursor: pointer;
@@ -67,9 +41,10 @@ p{
   }
   .arrowImg{
     width: 23px;
+    margin-left: 12px;
   }
   .para{
-    margin-top: 3px;
+    margin-top: 5px;
   }
   .inner-container{
     display: flex;

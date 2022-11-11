@@ -1,12 +1,13 @@
 import React from 'react'
 
 export default function CarLearn(props) {
-    const {val}=props
+    const {val}=props;
     return (
-        <div className="card-item">
-            <div className="card-inner" key={val.id}>
-                <p className='bodyType'>{val.bodyType}</p>
-                <div className='modalDetails'>
+            <div className="card-item">
+         
+                    <div className="card-inner" key={val.id}>
+                     <p className='bodyType'>{val.bodyType}</p>
+                     <div className='modalDetails'>
                     <h5>{val.modelName}</h5>
                     <p className='modalType'>{val.modelType}</p>
                 </div>
@@ -18,7 +19,12 @@ export default function CarLearn(props) {
                     </div>
                 </div>
             </div>
+               
+               
+           
 
         </div>
+        
+       
     )
 }
