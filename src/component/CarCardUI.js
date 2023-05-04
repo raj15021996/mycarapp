@@ -2,11 +2,12 @@ import React, { useState } from 'react'
 import { Routes, Route, Link } from "react-router-dom";
 import ArrowImg from '../docs/chevron-small.svg'
 import Slider from "react-slick";
-import data from './cars.json'
+// import data from './cars.json'
 import '../style.css';
 import CarLearn from './CarLearn';
-export default function CarCardUI() {
+export default function CarCardUI({ data }) {
     const [searchTerm, setSearchTerm] = useState("");
+    const [data1, setdata1] = useState([]);
     const [id, setId] = useState();
     var settings = {
         dots: true,
@@ -76,7 +77,12 @@ export default function CarCardUI() {
                                                 </div>
                                                 <div className="card-bottom">
                                                     <div className="card-info">
-                                                        <Link className='link' to="/learn">
+                                                        <Link className='link' to={{
+                                                            pathname: `/car`,
+                                                        }}
+                                                            state={{
+                                                                car: val,
+                                                            }}>
                                                             <div className='inner-container'>
                                                                 <div>
                                                                     <p className='para'>Learn</p>
@@ -86,6 +92,7 @@ export default function CarCardUI() {
                                                                 </div>
                                                             </div>
                                                         </Link>
+
                                                     </div>
                                                     <div className="card-Shop">
                                                         <a className='link' href={val.url}>
@@ -101,7 +108,6 @@ export default function CarCardUI() {
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </div>
 
                                     )
@@ -109,8 +115,8 @@ export default function CarCardUI() {
                         }
 
                     </Slider>
-                </div>
             </div>
+        </div>
         </>
     )
 }

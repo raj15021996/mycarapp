@@ -1,30 +1,41 @@
 import React from 'react'
+import { useParams, useLocation } from "react-router-dom";
 
-export default function CarLearn(props) {
-    const {val}=props;
-    return (
-            <div className="card-item">
-         
-                    <div className="card-inner" key={val.id}>
-                     <p className='bodyType'>{val.bodyType}</p>
-                     <div className='modalDetails'>
-                    <h5>{val.modelName}</h5>
-                    <p className='modalType'>{val.modelType}</p>
-                </div>
-                <div className="card-top">
-                    <img src={process.env.PUBLIC_URL + val.imageUrl} alt={val.modelName} />
-                </div>
-                <div className="card-bottom">
-                    <div className="card-info">
-                    </div>
-                </div>
-            </div>
-               
-               
-           
+const Learn = () => {
+  // const { id } = useParams();
+  const { modelName, bodyType, modelType, imageUrl } = useLocation().state.car;
 
+  return (
+    <div className="LearnModel">
+      <div className="learnHeading">
+        <h1 className="bodyType">{bodyType}</h1>
+        <h1 className="modelName">{modelName}</h1>
+        <h1 className="modelType">{modelType}</h1>
+      </div>
+
+      <div className="img">
+        <img src={imageUrl} alt="" />
+        <div className="description">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
+            dolorum expedita consequuntur ipsum voluptates provident labore
+            eaque vitae! Ut maiores ullam dolor nihil laboriosam, ducimus
+            libero, aspernatur repellendus alias assumenda labore nostrum illo
+            itaque fuga doloribus dolorum minus sequi quaerat. Quasi, hic?
+            Ipsum, debitis nam voluptate unde ducimus commodi? Incidunt a
+            temporibus nulla quos iure aspernatur inventore?
+          </p>
+          <br />
+          <br />
+          {/* <button className="gotoshop">
+            <Link className="learnLink" to={"/ThankYou"}>
+              SHOP NOW
+            </Link>
+          </button> */}
         </div>
-        
-       
-    )
-}
+      </div>
+    </div>
+  );
+};
+
+export default Learn;
